@@ -1,0 +1,9 @@
+# ignore ALL .log files
+*.log
+
+# ignore ALL files in ANY directory named local_data
+local_data
+
+# ignore ALL parquet and joblib files
+*.parquet
+*.joblib

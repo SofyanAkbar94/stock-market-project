@@ -1,0 +1,8 @@
+pandas==2.0.3
+numpy==1.26.4
+joblib==1.4.2
+scikit-learn==1.5.0
+tqdm==4.66.4
+TA-Lib==0.4.32
+yfinance==0.2.38
+pandas-datareader==0.10.0
