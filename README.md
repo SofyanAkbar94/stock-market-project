@@ -60,26 +60,25 @@ Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
 ## Exploratory Data Analysis (EDA)
 ### Objective: To understand the data characteristics, identify patterns, and discover insights that may guide further analysis and modeling decisions.
 ### Procedure:
-  Univariate Analysis
-  Bivariate Analysis
-  Multivariate Analysis
-  Correlation between df_dummies and is_positive_growth_5d_future
-  corr_is_positive_growth_5d_future = df_with_dummies[NUMERICAL+DUMMIES+TO_PREDICT].corr()['is_positive_growth_5d_future']
-  Correlation between df_dummies and growth future 5d
-  corr_growth_future_5d = df_with_dummies[NUMERICAL+DUMMIES+TO_PREDICT].corr()['growth_future_5d']
-  For the details see Data Transformations, EDA, Modeling, Trading Simulation.ipynb
+- Univariate Analysis
+- Bivariate Analysis
+- Multivariate Analysis
+- Correlation between df_dummies and is_positive_growth_5d_future
 ![alt text](image-3.png)
+- Correlation between df_dummies and growth future 5d
 ![alt text](image-4.png)
+- For the details see Data Transformations, EDA, Modeling, Trading Simulation.ipynb
 
 ## Modeling
 ### Objective: To build predictive models that can generalize well on unseen data, based on insights gained from EDA and data transformations.
 ### Procedure:
-  Model Selection: Choose appropriate algorithms based on problem type (e.g., regression, classification) and data characteristics.
-  Model Training: Fit the selected models to the training data while using techniques like cross-validation to optimize performance.
-  Hyperparameter Tuning: Fine-tune model parameters to improve accuracy and generalization.
-  Model Evaluation: Assess model performance using metrics such as accuracy, precision, recall, or RMSE (Root Mean Squared Error) depending on the problem.
-  In this project used Decision Tree algorithm, Random Forest algorithm, logistic regression algorithm and hyperparameter tuning for each algorithm. Then, custom decision rules on target higher probability events. Also, i used deep neural networks and hyperparameter tuning in the end.
-  Best model in this course is decision tree for the best precision is 0.5549 and the best depth is 19 and second best  is random forest for the best precision is 0.5538 and the best depth is 15. For the perfomance logistic regression and DNN is below decision tree and random forest. 
+- Model Selection: Choose appropriate algorithms based on problem type (e.g., regression, classification) and data characteristics.
+- Model Training: Fit the selected models to the training data while using techniques like cross-validation to optimize performance.
+- Hyperparameter Tuning: Fine-tune model parameters to improve accuracy and generalization.
+- Model Evaluation: Assess model performance using metrics such as accuracy, precision, recall, or RMSE (Root Mean Squared Error) depending on the problem.
+- In this project used Decision Tree algorithm, Random Forest algorithm, logistic regression algorithm and hyperparameter tuning for each algorithm. Then, custom decision rules on target higher probability events. Also, i used deep neural networks and hyperparameter tuning in the end.
+- Best model in this course is decision tree for the best precision is 0.5549 and the best depth is 19 and second best  is random forest for the best precision is 0.5538 and the best depth is 15. For the perfomance logistic regression and DNN is below decision tree and random forest.
+- For the details see Data Transformations, EDA, Modeling, Trading Simulation.ipynb
 
 ## Trading Simulation
 ### Objective: To simulate trading strategies based on predictive models and evaluate their effectiveness in a controlled environment.
@@ -140,10 +139,6 @@ tep 3: Generate requirements.txt
 After installing the dependencies, you can generate a requirements.txt file:
 pipenv lock -r > requirements.txt
 
-# Algo Trading
-
-This project implements an end-to-end algorithmic trading strategy using the `yfinance` API.
-
 ## Installation
 
 1. Clone the repository.
@@ -173,6 +168,7 @@ pip install -r requirements.txt
   * From your web browser (navigate to http://localhost:8888/tree or similar)
   * Or via the VS Code UI (specify the server address kernel) 
 * Run `main.py` from the Terminal (or Cron) to simulate one new day of data.
+'''
 
 ## Acknowledgement
 I would like to extend our sincere appreciation to Ivan Brigida for his invaluable contributions to the field of machine learning, particularly in advancing our understanding of time series analysis. Ivan's insights have provided a significant impact, offering novel perspectives and innovative approaches that have enriched our methodologies and applications in predictive modeling and forecasting.
