@@ -34,28 +34,30 @@ Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
 ## Define Objectives and Scope
 ### Objective: Develop a short-term trading strategy focusing on growth for several days/5 days for 25 US stocks.
 ### Scope:
-    Instruments: 25 US stocks from various sectors.
-    Investment Horizon: Short-term (holding periods of one week).
+- Instruments: 25 US stocks from various sectors.
+- Investment Horizon: Short-term (holding periods of one week).
 
 ## Data Sources 
 ### Objective: Gather historical OHLCV (Open, High, Low, Close, Volume) data for the selected stocks.
 ### Procedure:
-    Use the yfinance API to download historical data and add several features.
-    Store data in a structured format for further analysis.
-    For the details see Data Source With New Features.ipynb file.
+- Use the yfinance API to download historical data and add several features.
+- Store data in a structured format for further analysis.
+- For the details see Data Source With New Features.ipynb file.
+- For the details please check Data Source With New Features.ipynb
 ![alt text](image.png)
 ![alt text](image-1.png)
 
 ## Data Preprocessing
 ### Objective: Clean and enhance data with technical indicators for strategy development.
 ### Procedure:
-    Handle missing values and normalize data if necessary.
-    Adding features such as: 
-    - Momentum indicators
-    - Volume, Volatility, Cycle, Price indicators
-    - Pattern indicators
-    Feature sets are defined (TO_PREDICT, NUMERIC, DUMMIES)
-    Calculate Tech Indicators and Merge to the original dataframe
+- Handle missing values and normalize data if necessary.
+- Adding features such as: 
+  - Momentum indicators
+  - Volume, Volatility, Cycle, Price indicators
+  - Pattern indicators
+- Feature sets are defined (TO_PREDICT, NUMERIC, DUMMIES)
+- Calculate Tech Indicators and Merge to the original dataframe
+- For the details please check Data Source With New Features.ipynb & Data Transformations, EDA, Modeling, Trading Simulation.ipynb
 
 ## Exploratory Data Analysis (EDA)
 ### Objective: To understand the data characteristics, identify patterns, and discover insights that may guide further analysis and modeling decisions.
