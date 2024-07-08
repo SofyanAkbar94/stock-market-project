@@ -128,6 +128,18 @@ Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
   * Or via the VS Code UI (specify the server address kernel) 
 * Run `main.py` from the Terminal (or Cron) to simulate one new day of data.
 
+## Run cron job with github actions
+* Create a Directory for GitHub Actions Workflows
+    In your repository, create a directory named .github/workflows.
+* Create a Workflow File
+    Inside the .github/workflows directory, create a file named main.yml (or any descriptive name). This file will define the GitHub Actions workflow.
+* Define Dependencies in requirements.txt
+    Make sure all the required dependencies are listed in your requirements.txt file.
+* Verify the Workflow
+* Go to your GitHub repository.
+    Click on the "Actions" tab.
+    You should see your new workflow listed there. It will run based on the schedule you've set.
+
 ## Acknowledgement
 I would like to extend our sincere appreciation to Ivan Brigida for his invaluable contributions to the field of machine learning, particularly in advancing our understanding of time series analysis. Ivan's insights have provided a significant impact, offering novel perspectives and innovative approaches that have enriched our methodologies and applications in predictive modeling and forecasting.
 
