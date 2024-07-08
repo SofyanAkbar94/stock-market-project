@@ -4,15 +4,21 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pandas = "==2.0.3"
 numpy = "==1.26.4"
-joblib = "==1.4.2"
-scikit-learn = "==1.5.0"
-tqdm = "==4.66.4"
-talib = "*"
+pandas = "==2.0.3"
 yfinance = "==0.2.38"
 pandas-datareader = "==0.10.0"
-ta-lib = "==0.4.32"
+plotly = "==5.15.0"
+matplotlib = "==3.7.2"
+seaborn = "==0.12.2"
+scikit-learn = "==1.5.0"
+joblib = "==1.4.2"
+tensorflow = "*"
+keras = "*"
+dataclasses = "*"
+tqdm = "==4.66.4"
+requests = "==2.31.0"
+ta = "==0.10.2"
 
 [dev-packages]
 

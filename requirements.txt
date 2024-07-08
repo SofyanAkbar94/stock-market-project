@@ -1,8 +1,33 @@
-pandas==2.0.3
+# Basic Libraries
 numpy==1.26.4
-joblib==1.4.2
-scikit-learn==1.5.0
-tqdm==4.66.4
-TA-Lib==0.4.32
+pandas==2.0.3
+
+# Financial Data Sources
 yfinance==0.2.38
 pandas-datareader==0.10.0
+
+# Data Visualization
+plotly==5.15.0  # plotly doesn't specify express separately, they come together
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Machine Learning
+scikit-learn==1.5.0
+joblib==1.4.2
+
+# Neural Networks
+tensorflow
+keras
+
+# Miscellaneous
+dataclasses
+tqdm==4.66.4
+
+# Request library for web requests
+requests==2.31.0
+
+# Technical Analysis
+ta==0.10.2  # for technical analysis indicators, including RSI, MACD, etc.
+
+# If you're using TA-Lib, it must be installed manually on Windows due to binary dependencies
+# TA-Lib==0.4.32

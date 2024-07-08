@@ -66,9 +66,9 @@ Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
 - Bivariate Analysis
 - Multivariate Analysis
 - Correlation between df_dummies and is_positive_growth_5d_future
-![alt text](image-3.png)
+![alt text](image-7.png)
 - Correlation between df_dummies and growth future 5d
-![alt text](image-4.png)
+![alt text](image-8.png)
 - For the details see Data Transformations, EDA, Modeling, Trading Simulation.ipynb
 
 ## Modeling
@@ -85,92 +85,48 @@ Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
 ## Trading Simulation
 ### Objective: To simulate trading strategies based on predictive models and evaluate their effectiveness in a controlled environment.
 ### Procedure:
-  Strategy Definition: Define trading rules based on model predictions (e.g., buy/sell signals).
-  Simulation Execution: Execute trades based on defined rules using historical or simulated data.
-  Performance Evaluation: Measure the performance of the trading strategy using metrics like Sharpe ratio, profit/loss, and drawdown.
-  Risk Management: Implement risk controls to manage exposure and minimize potential losses.
-
-- Vector simulations for at least 1 strategy (and approximate returns on capital).
-- Two or more strategies are covered (sim1_, sim2_, etc. fields are generated for each prediction).
-- Exact simulations (iter.rows) with reinvestment of capital gains and efficient capital utilization.
-- Profitability discussion vs. benchmark, CAGR, Sharpe ratio, max drawdown, rolling returns, etc.
-- The best strategy has advanced features: risk management (e.g., stop loss), time of entry/sell, increased investment with higher probability, portfolio optimization.
-- New strategy: introduce a new empirical strategy based on the predictions, e.g., long-short strategy, or use no more than 1-3-5 concurrent investments, or combine with market conditions (trade only when volatility is high or current price is close to 52 weeks low), etc.
-- Exceptional profitability: choose a realistic benchmark (e.g., S&P500 index) and show that your best prediction/strategy delivers better performance (CAGR) on average than a benchmark.
-- Deep exploratory analysis: how predictions/precision are different by tickers (or markets, or month of year, or other features, etc.). Debug wrong predictions. Give ideas on the data features/models/strategies improvement based on the insights.
+- Strategy Definition: Define trading rules based on model predictions (e.g., buy/sell signals).
+- Simulation Execution: Execute trades based on defined rules using historical or simulated data.
+- Performance Evaluation: Measure the performance of the trading strategy using metrics like Sharpe ratio, profit/loss, and drawdown.
+- Risk Management: Implement risk controls to manage exposure and minimize potential losses.
+- In this course, I am conducting trading simulations using Vector simulations to explore at least one strategy. I am implement multiple strategies, denoted by fields like sim1_, sim2_, etc., for each prediction. The simulations will be executed with reinvestment of capital gains and efficient capital utilization using iter.rows. Discussions will cover profitability compared to benchmarks, CAGR, Sharpe ratio, max drawdown, rolling returns, and more. The most effective strategy will incorporate advanced features such as risk management (e.g., stop-loss), optimal timing for entry and exit, increased investment based on higher probability outcomes, and portfolio optimization.
+![alt text](image-9.png)
+![alt text](image-10.png)
+![alt text](image-11.png)
+- For the details see Data Transformations, EDA, Modeling, Trading Simulation.ipynb
 
 ## Deployment and Automation
 ### Objective: To deploy the predictive model and trading strategy into a production environment, automating data pipelines and decision-making processes.
 ### Procedure:
-  Model Integration: Integrate the trained model into the production system, ensuring compatibility with real-time data sources.
-  Pipeline Automation: Automate data ingestion, preprocessing, and model execution to handle new data seamlessly.
-  Monitoring and Maintenance: Implement monitoring tools to track model performance and intervene if performance degrades.
-  Feedback Loop: Continuously collect feedback from model outputs and trading results to refine and improve the system over time.
-
-    Create a Pipfile with all dependencies.
-    Install the dependencies using Pipenv.
-    Generate requirements.txt from the Pipenv environment.
-
-Step 1: Create a Pipfile
-
-Create a Pipfile in your project directory with the following content:
-[[source]]
-name = "pypi"
-url = "https://pypi.org/simple"
-verify_ssl = true
-
-[dev-packages]
-
-[packages]
-pandas = "*"
-numpy = "*"
-scikit-learn = "*"
-joblib = "*"
-tqdm = "*"
-talib = "*"
-yfinance = "*"
-pandas-datareader = "*"
-
-Step 2: Install the Dependencies
-
-Run the following command to install the dependencies:
-pipenv install
-
-tep 3: Generate requirements.txt
-
-After installing the dependencies, you can generate a requirements.txt file:
-pipenv lock -r > requirements.txt
-
-## Installation
-
-1. Clone the repository.
-2. Navigate to the project directory.
-3. Create a virtual environment and install dependencies:
-
-```sh
-python -m venv env
-source env/bin/activate   # On Windows use `env\Scripts\activate`
-pip install -r requirements.txt
+- Model Integration: Integrate the trained model into the production system, ensuring compatibility with real-time data sources.
+- Pipeline Automation: Automate data ingestion, preprocessing, and model execution to handle new data seamlessly.
+- Monitoring and Maintenance: Implement monitoring tools to track model performance and intervene if performance degrades.
+- Feedback Loop: Continuously collect feedback from model outputs and trading results to refine and improve the system over time.
 
 # Local Automation Instructions
+## Setting Up the Project Environment (in Terminal) in Windows OS
+- Using pipenv
+* Change the working directory to the project folder: `cd project/`
+* Install virtual environment: `pip install pipenv`
+* Activate the new virtual environment (pipenv): `pipenv shell`
+![alt text](image-12.png)
+* Install all requirements to the new environment (pipenv): `pip install -r requirements.txt`
+* The Pipfile file is intended to specify packages requirements for your Python application or library, both to development and execution. Build Pipfile: `pipenv install -r requirements.txt`
+* Pipfile.lock is intended to specify, based on the packages present in Pipfile, which specific version of those should be used, avoiding the risks of automatically upgrading packages that depend upon each other and breaking your project dependency tree. You can lock your currently installed packages using: `pipenv lock`
 
-## Setting Up the Project Environment (in Terminal)
-
-* Change the working directory to the Module5 folder: `cd 05-deployment-and-automation/`
-* Install virtual environment: `pip3 install virtualenv`
-* Create a new virtual environment (venv): `virtualenv venv` (or run `python3 -m venv venv`)
+- Using virtualenv
+* Change the working directory to the Module5 folder: `cd project/`
+* Install virtual environment: `pip install virtualenv`
+* Create a new virtual environment (venv): `virtualenv venv`(or run `python -m venv venv`)
 * Activate the new virtual environment: `source venv/bin/activate`
-
-* Install all requirements to the new environment (venv): `pip3 install -r requirements.txt`
+* Install all requirements to the new environment (pipenv): `pip install -r requirements.txt`
 
 ## Running the Project
-
-* Start the local Jupyter Server (after activating venv): `jupyter notebook` (you can check all servers running with `jupyter notebook list`)
+* Start the local Jupyter Server (after activating venv or pipenv): `jupyter notebook` (you can check all servers running with `jupyter notebook list`)
 * Open `test.ipynb` to check the system's operation:
   * From your web browser (navigate to http://localhost:8888/tree or similar)
   * Or via the VS Code UI (specify the server address kernel) 
 * Run `main.py` from the Terminal (or Cron) to simulate one new day of data.
-'''
 
 ## Acknowledgement
 I would like to extend our sincere appreciation to Ivan Brigida for his invaluable contributions to the field of machine learning, particularly in advancing our understanding of time series analysis. Ivan's insights have provided a significant impact, offering novel perspectives and innovative approaches that have enriched our methodologies and applications in predictive modeling and forecasting.
