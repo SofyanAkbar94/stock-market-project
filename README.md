@@ -1,22 +1,76 @@
 # stock-market-project
 =======
 # Problem Description
-- I want use the stock from alpha vantage but only free 25 ticker/day and paid quite expensive so i use choose yfinance api with many features
+- Problem : I want use the stock from alpha vantage but only free 25 ticker/day and paid quite expensive
+![alt text](image-6.png) 
+- Solution : so i use choose yfinance api with many features.
+- Problem : Can't install TA-lib from windows using pip install TA-lib.
+- Solution : install manually using visual code c++ and add into pip library
+Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
+
+    This is a 32-bit binary release. If you want to use 64-bit Python, you will need to build a 64-bit version of the library. Some unofficial instructions for building on 64-bit Windows 10 or Windows 11, here for reference:
+
+        Download and Unzip ta-lib-0.4.0-msvc.zip
+        Move the Unzipped Folder ta-lib to C:\
+        Download and Install Visual Studio Community (2015 or later)
+            Remember to Select [Visual C++] Feature
+        Build TA-Lib Library
+            From Windows Start Menu, Start [VS2015 x64 Native Tools Command Prompt]
+            Move to C:\ta-lib\c\make\cdr\win32\msvc
+            Build the Library nmake
+
+            or from https://medium.com/pythons-gurus/how-to-properly-install-ta-lib-on-windows-11-for-python-a-step-by-step-guide-13ebb684f4a6
+- Problem : 
+  Short-term trading:
+  Pros: Potentially higher returns, More active involvement
+  Cons: Higher risk, Time commitment, higher tax rates
+  Long-term trading:
+  Pros: Lower risk, less time commitment, lower tax rates.
+  Cons: Might be slower returns, less active involvement
+- Solution:
+  Short-term trading can be lucrative but is riskier and requires a significant time commitment. It's best suited for experienced investors with a high tolerance for risk.
+  Long-term trading is a more relaxed approach that benefits from market growth over time. It's a good option for most investors, especially beginners (needs more training with model for long term example data 30,60,90,180,360 days).
+ 
+# Define Objectives and Scope
+## Objective: Develop a short-term trading strategy focusing on growth for several days/5 days for 25 US stocks.
+## Scope:
+    Instruments: 25 US stocks from various sectors.
+    Investment Horizon: Short-term (holding periods of one week).
 
 # Data Sources 
-- I choose 25 stock from US and add several features. For the details see Data Source With New Features.ipynb file.
+## Objective: Gather historical OHLCV (Open, High, Low, Close, Volume) data for the selected stocks.
+## Procedure:
+    Use the yfinance API to download historical data and add several features.
+    Store data in a structured format for further analysis.
+    For the details see Data Source With New Features.ipynb file.
 ![alt text](image.png)
 ![alt text](image-1.png)
 
-# Data Transformations + EDA
+# Data Preprocessing
+## Objective: Clean and enhance data with technical indicators for strategy development.
+## Procedure:
+    Handle missing values and normalize data if necessary.
+    Adding features such as: 
+    - Momentum indicators
+    - Volume, Volatility, Cycle, Price indicators
+    - Pattern indicators
+    Calculate Tech Indicators and Merge to the original dataframe
+
+# Data Transformations
+## Objective: Clean and enhance data with technical indicators for strategy development.
+## Procedure:
 - Data is combined into one data frame. Feature sets are defined (TO_PREDICT, NUMERIC, DUMMIES)
+
 - New relevant features are generated from transformations (at least 5. One dummy set is one feature): it can be binned variables from numeric features or manual transformations.
 Create a new string column weekday and month columns
 Create a new string column 'month_wom' (month_week_of_month)
 Binned variables from numeric features
 Interaction features
 Lag features
-- Data Analysis:
+
+# Explorartory Data Analysis (EDA)
+## Objective: Clean and enhance data with technical indicators for strategy development.
+## Procedure:
 Correlation between df_dummies correlation with is_positive_growth_5d_future
 corr_is_positive_growth_5d_future = df_with_dummies[NUMERICAL+DUMMIES+TO_PREDICT].corr()['is_positive_growth_5d_future']
 Correlation between df_dummies correlation with growth future 5d
