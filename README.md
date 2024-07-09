@@ -161,6 +161,40 @@ You can run the dashboard locally by executing the following command in the term
 To make the dashboard live, you need to deploy it on a web server.
 ![alt text](image-13.png)
 
+## Step-by-Step Guide to Containerizing
+1. Create a requirements.txt file
+This file should list all the Python packages your script depends on.
+2. Update code dashboard.py
+Ensure your dashboard.py script is set up to run the Dash app correctly and listen on all network interfaces by setting host='0.0.0.0' in the app.run_server method:
+```
+if __name__ == '__main__':
+    app.run_server(host='0.0.0.0', port=8050, debug=True)
+```
+3. Create a Dockerfile
+This file defines the Docker image.
+4. Build the Docker Image
+Open a terminal in the directory containing the Dockerfile and requirements.txt, then run the following command to build the Docker image:
+`docker build -t dashboard-app .`
+5. Run the Docker Container:
+Once the image is built, you can run it using the following command:
+`docker run -p 8050:8050 dashboard-app`
+This maps port 8050 of the container to port 8050 on your host machine, allowing you to access the dashboard at http://localhost:8050.
+6. Verify the Container:
+Visit http://localhost:8050 in your web browser to verify that the dashboard is running correctly inside the container.
+
+## Alternatives using Docker Compose
+Here are the steps to create a docker-compose.yml file and use Docker Compose to run your dashboard-app:
+Steps to Setup Docker Compose
+1. Create docker-compose.yml File:
+Create a docker-compose.yml file in the root directory of your project.
+2. Add Service/Dockerfile Configuration:
+Define the service/Dockerfile for your dashboard app and specify the port forwarding.
+Steps to Use Docker Compose
+3. Build and Start the Service:
+`docker-compose up --build`
+4. Access the Application:
+Open your browser and navigate to http://localhost:8050.
+
 ## Acknowledgement
 I would like to extend our sincere appreciation to Ivan Brigida for his invaluable contributions to the field of machine learning, particularly in advancing our understanding of time series analysis. Ivan's insights have provided a significant impact, offering novel perspectives and innovative approaches that have enriched our methodologies and applications in predictive modeling and forecasting.
 
