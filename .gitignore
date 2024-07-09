@@ -8,3 +8,4 @@ local_data
 *.parquet
 *.joblib
 *.csv
+*.pkl
