@@ -2,8 +2,8 @@ name: Run Trading System
 
 on:
   schedule:
-    # Runs at 12:35 UTC every day
-    - cron: '35 12 * * *'
+    # Runs at 0:0 UTC every day
+    - cron: '0 0 * * *'
 
 jobs:
   build:
