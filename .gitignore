@@ -4,6 +4,7 @@
 # ignore ALL files in ANY directory named local_data
 local_data
 
-# ignore ALL parquet and joblib files
+# ignore all this files
 *.parquet
 *.joblib
+*.csv

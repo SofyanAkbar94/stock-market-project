@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  dashboard-app:
+    image: dashboard-app
+    build:
+      context: .
+    ports:
+      - "8050:8050"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1

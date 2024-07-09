@@ -103,7 +103,7 @@ Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
 - Monitoring and Maintenance: Implement monitoring tools to track model performance and intervene if performance degrades.
 - Feedback Loop: Continuously collect feedback from model outputs and trading results to refine and improve the system over time.
 
-# Local Automation Instructions
+## Local Automation Instructions
 ## Setting Up the Project Environment (in Terminal) in Windows OS
 - Using pipenv
 * Change the working directory to the project folder: `cd project/`
@@ -139,6 +139,27 @@ Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
 * Go to your GitHub repository.
     Click on the "Actions" tab.
     You should see your new workflow listed there. It will run based on the schedule you've set.
+
+## Two regimes for the system
+* Check two_regimes.py file to run the two_regimes
+
+## Incremental data loading
+* Check incremental_loading.py file to run the incremental_loading
+
+## Step-by-Step Guide to Create and Deploy a Dashboard
+1. Set Up the Environment
+First, ensure you have the necessary packages installed. You can install them using pip:
+`pip install dash plotly pandas joblib`
+2. Create the Dashboard Application
+Create a new file called dashboard.py 
+3. Run the Dashboard Locally
+You can run the dashboard locally by executing the following command in the terminal:
+`python dashboard.py`
+4. This will start a local server, and you can view the dashboard in your browser at http://127.0.0.1:8050/.
+5. Deploy the Dashboard in aws
+
+To make the dashboard live, you need to deploy it on a web server.
+![alt text](image-13.png)
 
 ## Acknowledgement
 I would like to extend our sincere appreciation to Ivan Brigida for his invaluable contributions to the field of machine learning, particularly in advancing our understanding of time series analysis. Ivan's insights have provided a significant impact, offering novel perspectives and innovative approaches that have enriched our methodologies and applications in predictive modeling and forecasting.
