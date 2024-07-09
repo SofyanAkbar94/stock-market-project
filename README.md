@@ -105,7 +105,7 @@ Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
 
 ## Local Automation Instructions
 ## Setting Up the Project Environment (in Terminal) in Windows OS
-- Using pipenv
+  Using pipenv
 * Change the working directory to the project folder: `cd project/`
 * Install virtual environment: `pip install pipenv`
 * Activate the new virtual environment (pipenv): `pipenv shell`
@@ -114,7 +114,7 @@ Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
 * The Pipfile file is intended to specify packages requirements for your Python application or library, both to development and execution. Build Pipfile: `pipenv install -r requirements.txt`
 * Pipfile.lock is intended to specify, based on the packages present in Pipfile, which specific version of those should be used, avoiding the risks of automatically upgrading packages that depend upon each other and breaking your project dependency tree. You can lock your currently installed packages using: `pipenv lock`
 
-- Using virtualenv
+  Using virtualenv
 * Change the working directory to the Module5 folder: `cd project/`
 * Install virtual environment: `pip install virtualenv`
 * Create a new virtual environment (venv): `virtualenv venv`(or run `python -m venv venv`)
