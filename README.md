@@ -195,6 +195,42 @@ Steps to Use Docker Compose
 4. Access the Application:
 Open your browser and navigate to http://localhost:8050.
 
+## Steps to Deploy with AWS ECS and Fargate
+1. Install AWS CLI and Configure Credentials:
+Install the AWS CLI if you haven’t already.
+Configure your AWS credentials.
+`aws configure`
+2. Create a Docker Image:
+Ensure your Docker image is built and tagged appropriately.
+`docker build -t dashboard-app .`
+3. Push Docker Image to Amazon ECR:
+* Create a repository in Amazon ECR.
+* Authenticate Docker to your Amazon ECR registry.
+* Tag your Docker image.
+* Push the image to the ECR repository.
+```
+aws ecr create-repository --repository-name dashboard-app
+$(aws ecr get-login --no-include-email --region your-region)
+docker tag dashboard-app:latest your-aws-account-id.dkr.ecr.your-region.amazonaws.com/dashboard-app:latest
+docker push your-aws-account-id.dkr.ecr.your-region.amazonaws.com/dashboard-app:latest
+```
+4. Create an ECS Cluster:
+You can create a new cluster using the AWS Management Console or the AWS CLI.
+`aws ecs create-cluster --cluster-name dashboard-cluster`
+5. Create a Task Definition for Your Container:
+Define a task for your ECS service, specifying the ECR image and the resources required.
+Save ECS.json as task-definition.json and register it with ECS:
+`aws ecs register-task-definition --cli-input-json file://task-definition.json`
+6. Run the Task in Your Cluster:
+Create a service to run your task in the ECS cluster.
+    aws ecs create-service --cluster dashboard-cluster --service-name dashboard-service --task-definition dashboard-task --desired-count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-xxxxxxx],securityGroups=[sg-xxxxxxx],assignPublicIp=ENABLED}"
+Ensure you replace subnet-xxxxxxx and sg-xxxxxxx with your actual subnet and security group IDs.
+7. Access Your Application:
+You can access your application via the public IP address assigned to the ECS service. You can find this in the ECS service details in the AWS Management Console.
+Notes:
+    Security Groups: Ensure the security group associated with the ECS task allows inbound traffic on port 8050.
+    VPC and Subnets: Ensure the ECS service is launched in a VPC with subnets that have internet access (public subnets).
+
 ## Acknowledgement
 I would like to extend our sincere appreciation to Ivan Brigida for his invaluable contributions to the field of machine learning, particularly in advancing our understanding of time series analysis. Ivan's insights have provided a significant impact, offering novel perspectives and innovative approaches that have enriched our methodologies and applications in predictive modeling and forecasting.
 
