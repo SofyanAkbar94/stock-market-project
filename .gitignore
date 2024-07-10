@@ -9,3 +9,4 @@ local_data
 *.joblib
 *.csv
 *.pkl
+__pycache__/
