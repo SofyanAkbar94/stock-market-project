@@ -1,33 +1,22 @@
-# Basic Libraries
+dash==2.17.1
+dash-core-components==2.0.0
+dash-html-components==2.0.0
+dash-table==5.0.0
+Flask==3.0.3
+plotly==5.21.0
 numpy==1.26.4
 pandas==2.0.3
-
-# Financial Data Sources
 yfinance==0.2.38
 pandas-datareader==0.10.0
-
-# Data Visualization
-plotly==5.15.0  # plotly doesn't specify express separately, they come together
-matplotlib==3.7.2
-seaborn==0.12.2
-
-# Machine Learning
+matplotlib==3.8.4
+seaborn==0.13.2
 scikit-learn==1.5.0
 joblib==1.4.2
-
-# Neural Networks
-tensorflow
-keras
-
-# Miscellaneous
-dataclasses
+tensorflow==2.16.1
+keras==3.3.3
 tqdm==4.66.4
-
-# Request library for web requests
 requests==2.31.0
-
-# Technical Analysis
-ta==0.10.2  # for technical analysis indicators, including RSI, MACD, etc.
-
-# If you're using TA-Lib, it must be installed manually on Windows due to binary dependencies
-# TA-Lib==0.4.32
+ta==0.11.0
+SQLAlchemy==2.0.31
+pyarrow==11.0.0
+fastparquet==2024.5.0

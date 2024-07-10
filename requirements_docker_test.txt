@@ -1,0 +1,10 @@
+dash==2.17.1
+dash-core-components==2.0.0
+dash-html-components==2.0.0
+dash-table==5.0.0
+Flask==3.0.3
+pandas==2.0.3
+plotly==5.21.0
+joblib==1.4.2
+pyarrow==11.0.0
+fastparquet==2024.5.0

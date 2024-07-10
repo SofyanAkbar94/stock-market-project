@@ -1,0 +1,38 @@
+Linux
+
+Download ta-lib-0.4.0-src.tar.gz and:
+
+$ tar -xzf ta-lib-0.4.0-src.tar.gz
+$ cd ta-lib/
+$ ./configure --prefix=/usr
+$ make
+$ sudo make install
+
+    If you build TA-Lib using make -jX it will fail but that's OK! Simply rerun make -jX followed by [sudo] make install.
+
+Note: if your directory path includes spaces, the installation will probably fail with No such file or directory errors.
+
+Source : https://github.com/TA-Lib/ta-lib-python/tree/master
+or use this link https://medium.com/@outwalllife001/how-to-install-ta-lib-on-ubuntu-22-04-step-by-step-88ffd2507bbd
+
+Windows
+
+Windows
+
+Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
+
+    This is a 32-bit binary release. If you want to use 64-bit Python, you will need to build a 64-bit version of the library. Some unofficial instructions for building on 64-bit Windows 10 or Windows 11, here for reference:
+
+        Download and Unzip ta-lib-0.4.0-msvc.zip
+        Move the Unzipped Folder ta-lib to C:\
+        Download and Install Visual Studio Community (2015 or later)
+            Remember to Select [Visual C++] Feature
+        Build TA-Lib Library
+            From Windows Start Menu, Start [VS2015 x64 Native Tools Command Prompt]
+            Move to C:\ta-lib\c\make\cdr\win32\msvc
+            Build the Library nmake
+
+You might also try these unofficial windows binary wheels for both 32-bit and 64-bit:
+
+https://github.com/cgohlke/talib-build/
+or use this link: https://medium.com/pythons-gurus/how-to-properly-install-ta-lib-on-windows-11-for-python-a-step-by-step-guide-13ebb684f4a6

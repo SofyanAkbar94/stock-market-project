@@ -1,0 +1,22 @@
+{
+    "family": "dashboard-task",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "256",
+    "memory": "512",
+    "containerDefinitions": [
+      {
+        "name": "dashboard-container",
+        "image": "your-aws-account-id.dkr.ecr.your-region.amazonaws.com/dashboard-app:latest",
+        "portMappings": [
+          {
+            "containerPort": 8050,
+            "hostPort": 8050,
+            "protocol": "tcp"
+          }
+        ],
+        "essential": true
+      }
+    ]
+  }
+  
