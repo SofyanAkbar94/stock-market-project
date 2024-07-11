@@ -2,7 +2,7 @@ name: Run Trading System
 
 on:
   schedule:
-    # Runs at every 15 minutes UTC every day
+    # Runs every 15 minutes UTC every day
     - cron: '*/15 * * * *'
 
 jobs:
@@ -31,6 +31,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install TA-Lib  # Ensure Python wrapper for TA-Lib is installed
 
     - name: Run the trading system
       run: python main.py
