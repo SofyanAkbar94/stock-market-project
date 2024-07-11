@@ -17,7 +17,6 @@ keras==3.3.3
 tqdm==4.66.4
 requests==2.31.0
 ta==0.11.0
-TA-Lib==0.4.32
 SQLAlchemy==2.0.31
 pyarrow==11.0.0
 fastparquet==2024.5.0
