@@ -139,6 +139,7 @@ Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib.
 * Go to your GitHub repository.
     Click on the "Actions" tab.
     You should see your new workflow listed there. It will run based on the schedule you've set.
+![alt text](image-14.png)
 
 ## Two regimes for the system
 * Check two_regimes.py file to run the two_regimes
